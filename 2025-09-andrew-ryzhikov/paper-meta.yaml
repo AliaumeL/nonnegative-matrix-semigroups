@@ -1,0 +1,37 @@
+title: "research report"
+date: "2025-10-13"
+abstract: |
+    This report summarizes the research activities performed 
+    during the visit of Andrew Ryzhikov to LaBRI, Bordeaux, France,
+    from the 6th to the 9th of October, 2025. 
+lang: en-GB
+keywords:
+    - "Semigroups"
+    - "Weighted Automata"
+    - "Rational Series"
+    - "Nonnegative Matrices"
+author:
+    - name: "Aliaume Lopez"
+      initials: "A.L."
+      email: "aliaume.lopez@bordeaux-inp.fr"
+      orcid: "0000-0002-4205-327X"
+      affiliation:
+        name: "INP Bordeaux, LaBRI, UMR 5800, CNRS, Univ. Bordeaux"
+        city: "Bordeaux"
+        country: "France"
+    - name: "Andrew Ryzhikov"
+      initials: "A.R."
+      email: "ryzhikov.andrew@gmail.com"
+      orcid: "0000-0002-2031-2488"
+      affiliation:
+        name: "University of Warsaw, Faculty of Mathematics, Informatics and Mechanics"
+        city: "Warsaw"
+        country: "Poland"
+    - name: "Arka Ghosh"
+      initials: "A.G."
+      orcid: "0000-0003-3839-8459"
+      email: "a.ghosh@uw.edu.pl"
+      affiliation:
+        name: "University of Bordeaux, LaBRI, UMR 5800, CNRS, Univ. Bordeaux"
+        city: "Bordeaux"
+        country: "France"
