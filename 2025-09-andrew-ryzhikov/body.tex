@@ -135,12 +135,12 @@ We are interested in solving the following conjectures:
 
 \section{Solving \cref{conj:group-nonnegative}}
 
-\paragraph*{Failed attempts} Let us briefly mention 
-why adapting the proof of \cref{thm:finite-semigroup} to
-prove \cref{conj:group-nonnegative} does not straightforwardly work.
-The main issue is that the notions of $\Int$-module and $\Int_+$-module
-differ significantly.
-
+\paragraph*{Failed attempts} Let us briefly mention why adapting the proof of
+\cref{thm:finite-semigroup} to prove \cref{conj:group-nonnegative} does not
+straightforwardly work. The main issue is that the notions of $\Int$-module and
+$\Int_+$-module differ significantly. Namely, it is not true that the dimension
+of $A$ as created in the proof of \cref{thm:finite-semigroup} will be at most
+$n$ as an $\Int_+$-module.
 
 \paragraph*{Full characterisation}
 Nonnegativity of the matrices in the group $G$ is a very strong 
@@ -203,7 +203,7 @@ the $r_j$'s of \cref{lem:weighted-permutation}.
 
 \begin{theorem}
   \label{thm:group-nonnegative}
-  Any finite group of $\GL[n]{\Rat_+}$ is \kl(matrix){conjugate} to a finite group of
+  Any finite subgroup of $\GL[n]{\Rat_+}$ is \kl(matrix){conjugate} to a finite group of
   $\GL[n]{\Int_+}$.
 \end{theorem}
 \begin{proof}
@@ -225,6 +225,23 @@ the $r_j$'s of \cref{lem:weighted-permutation}.
   \end{equation}  
   This concludes the proof.
 \end{proof}
+
+\section{Finite semigroups of nonnegative matrices}
+
+It is not difficult to see that in a finite semigroup of nonnegative matrices,
+every idempotent matrix is a projection matrix, and that every pair of
+idempotent matrices commute. It seems that a strengthening of 
+\cref{thm:group-nonnegative} to subsemigroups that are groups 
+could be a first step towards solving \cref{conj:semigroup-nonnegative}.
+
+\begin{conjecture}
+  \label{conj:subgroup-nonnegative}
+  Let $S$ be a finite semigroup of $\Mat[n]{\Rat_+}$, 
+  let $e \in S$ be an idempotent matrix, and assume that 
+  $(S, e, \times)$ is a group with identity $e$. Then, $S$ is
+  \kl(matrix){conjugate} to a finite subsemigroup 
+  of $\Mat[n]{\Int_+}$.
+\end{conjecture}
 
 \section{Future work}
 
