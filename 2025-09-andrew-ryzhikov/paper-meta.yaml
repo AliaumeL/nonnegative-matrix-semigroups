@@ -1,10 +1,11 @@
-title: "research report"
+title: "Research Report"
 date: "2025-10-13"
 abstract: |
     This report summarizes the research activities performed 
     during the visit of Andrew Ryzhikov to LaBRI, Bordeaux, France,
     from the 6th to the 9th of October, 2025. 
 lang: en-GB
+repository: https://github.com/AliaumeL/nonnegative-matrix-semigroups
 keywords:
     - "Semigroups"
     - "Weighted Automata"

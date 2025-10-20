@@ -56,6 +56,8 @@ where $P^{-1}SP = \{P^{-1}MP \mid M \in S\}$. Note thet this defines an
 isomorphism of semigroups between $S$ and $T$.
 
 
+
+
 \subsection{Restating the previous result}
 
 As a first step, we reprove the result of \cite{BUHAKISTTA20}, following
@@ -123,7 +125,7 @@ We are interested in solving the following conjectures:
 
 \begin{conjecture}
   \label{conj:group-nonnegative}
-  Any finite group of $\GL[n]{\Rat}$ is \kl(matrix){conjugate} to a finite group of
+  Any finite group of $\GL[n]{\Rat_+}$ is \kl(matrix){conjugate} to a finite group of
   $\GL[n]{\Int_+}$.
 \end{conjecture}
 
@@ -143,11 +145,12 @@ of $A$ as created in the proof of \cref{thm:finite-semigroup} will be at most
 $n$ as an $\Int_+$-module.
 
 \paragraph*{Full characterisation}
+\AP
 Nonnegativity of the matrices in the group $G$ is a very strong 
 assumption, because inverses usually involve negative entries.
 It is not difficult to see that a matrix $A$ with nonnegative 
 rational entries has its inverse $A^{-1}$ also with nonnegative
-rational entries if and only if $A$ is a weighted permutation matrix, 
+rational entries if and only if $A$ is a \intro{weighted permutation matrix},
 that is: there exists a permutation $\sigma$ of $\{1, \ldots, n\}$ and
 positive rational numbers $r_1, \ldots, r_n$ such that
 \begin{equation}
@@ -157,16 +160,21 @@ positive rational numbers $r_1, \ldots, r_n$ such that
   \end{cases}
   \quad .
 \end{equation}
+Let us define a \intro{permutation matrix} as a weighted permutation matrix
+where all weights are equal to $1$, and let us observe that 
+the inverse of a \kl{weighted permutation matrix} is also a \kl{weighted
+permutation matrix} associated to the inverse permutation and weights
+$1/r_{\sigma^{-1}(1)}, \ldots, 1/r_{\sigma^{-1}(n)}$.
 
 From this observation, one also gets a characterisation of invertible matrices
-with nonnegative integer entries, that are \emph{exactly} permutation matrices.
+with nonnegative integer entries, that are \emph{exactly} \kl{permutation matrices}.
 Hence, solving \cref{conj:group-nonnegative} amounts to comparing finite groups
-of weighted permutation matrices and finite groups of permutation matrices.
+of \kl{weighted permutation matrices} and finite groups of \kl{permutation matrices}.
 Here, finiteness plays a crucial role as the following lemma shows.
 
 \begin{lemma}
   \label{lem:weighted-permutation}
-  Let $G$ be a finite group of weighted permutation matrices in
+  Let $G$ be a finite group of \kl{weighted permutation matrices} in
   $\GL[n]{\Rat_+}$. Then, for every $j \in \{1, \ldots, n\}$, 
   there exists $r_j > 0$ such that
   for every $M \in G$, 
@@ -178,7 +186,7 @@ Here, finiteness plays a crucial role as the following lemma shows.
   and both are non-zero. Then, for every integer $k \geq 1$, the matrix $M^k
   N^{-k}$ belongs to $G$ and satisfies that $(M^k N^{-k})_{i,j} =
   (M_{i,j}/N_{i,j})^k$. The latter equality holds because all matrices are
-  weighted permutation matrices. Since $M_{i,j} \neq N_{i,j}$ and both are
+  \kl{weighted permutation matrices}. Since $M_{i,j} \neq N_{i,j}$ and both are
   non-zero, the sequence $(M_{i,j}/N_{i,j})^k$ is infinite, and thus $G$ is
   infinite, which contradicts our assumption.
 
@@ -196,10 +204,10 @@ Here, finiteness plays a crucial role as the following lemma shows.
   we have $M_{i,j} \in \{0, r_j / r_i\}$.
 \end{proof}
 
-From \cref{lem:weighted-permutation}, we deduce that
-every finite group of weighted permutation matrices is conjugate to a group
-of permutation matrices, by a diagonal matrix $P$ whose diagonal entries are
-the $r_j$'s of \cref{lem:weighted-permutation}. 
+From \cref{lem:weighted-permutation}, we deduce that every finite group of
+\kl{weighted permutation matrices} is \kl(matrix){conjugate} to a group of
+\kl{permutation matrices}, by a diagonal matrix $P$ whose diagonal entries are the
+$r_j$'s of \cref{lem:weighted-permutation}. 
 
 \begin{theorem}
   \label{thm:group-nonnegative}
@@ -214,7 +222,7 @@ the $r_j$'s of \cref{lem:weighted-permutation}.
 
   Let $P$ be the diagonal matrix with diagonal entries $r_1, \ldots, r_n$,
   which is invertible over $\Rat_+$.
-  Let us prove that $P^{-1} G P$ is a group of permutation matrices.
+  Let us prove that $P^{-1} G P$ is a group of \kl{permutation matrices}.
   Let $M \in G$, and let $N = P M P^{-1}$.
   For every $i, j \in \{1, \ldots, n\}$, we have
   \begin{equation}
@@ -228,20 +236,41 @@ the $r_j$'s of \cref{lem:weighted-permutation}.
 
 \section{Finite semigroups of nonnegative matrices}
 
-It is not difficult to see that in a finite semigroup of nonnegative matrices,
-every idempotent matrix is a projection matrix, and that every pair of
-idempotent matrices commute. It seems that a strengthening of 
-\cref{thm:group-nonnegative} to subsemigroups that are groups 
-could be a first step towards solving \cref{conj:semigroup-nonnegative}.
+\AP In order to study finite semigroups of nonnegative matrices, let us first
+focus on their subsemigroups that are groups. An \intro{idempotent} in a
+semigroup $S$ is an element $e \in S$ such that $e^2 = e$. Note that in a
+finite semigroup, every element $s \in S$ has a power $s^k$ that is an
+\kl{idempotent}. In the case of matrices, \kl{idempotents} are exactly
+projections, and the non-negativity constraint adds further structure to these
+projections: they project $\Rat_+^n$ to a cone of $\Rat_+^n$.
 
 \begin{conjecture}
   \label{conj:subgroup-nonnegative}
   Let $S$ be a finite semigroup of $\Mat[n]{\Rat_+}$, 
-  let $e \in S$ be an idempotent matrix, and assume that 
+  let $e \in S$ be an \kl{idempotent} matrix, and assume that 
   $(S, e, \times)$ is a group with identity $e$. Then, $S$ is
   \kl(matrix){conjugate} to a finite subsemigroup 
   of $\Mat[n]{\Int_+}$.
 \end{conjecture}
+
+\begin{remark}
+  \label{rem:projections}
+  A first step towards understanding semigroups of nonnegative matrices
+  is to understand the structure of idempotent matrices in these semigroups.
+  These matrices are projections onto cones of $\Rat_+^n$, but unlike 
+  the invertible case, these are not necessarily weighted 
+  projections onto faces of the positive orthant: for instance, the matrix 
+  \begin{equation*}
+    A \defined \begin{pmatrix}
+      1/2 & 1/2 \\
+      1/2 & 1/2
+    \end{pmatrix}
+  \end{equation*}
+  is an idempotent matrix with nonnegative entries, and the image of $\Rat_+^2$ is the
+  cone $\{(x, x) \mid x \in \Rat_+\}$, which is not a face of $\Rat_+^2$.
+\end{remark}
+
+
 
 \section{Future work}
 
@@ -259,9 +288,13 @@ of the entries of the matrices, which acts as a natural extension of the
 finite case.
 
 
+
 \paragraph*{Relevant literature in the polynomial growth setting} There are
 several works that study weighted automata with ``polynomial growth'' and
 outputs in $\Nat$ or $\Int$. These works include the ones of \cite{KRRC13},
-\cite{CDTL23}, and \cite{LOPEZ25}.
+\cite{CDTL23}, and \cite{LOPEZ25}. One possible direction would be to see
+whether the results of these works in the case of \emph{commutative semigroups}
+(and in particular, where matrices are trigonalizable simultaneously) can be
+extended from the polynomial to the exponential growth setting.
 
 
