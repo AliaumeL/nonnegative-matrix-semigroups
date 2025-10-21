@@ -1,3 +1,10 @@
+## Produced Pdfs Files
+*.pdf
+
+## Knowledge auxiliary files
+*.kaux
+*.diagnose
+
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof

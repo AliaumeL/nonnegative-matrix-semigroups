@@ -1,5 +1,5 @@
 ---
-bibliography: ./papers.bib
+bibliography: ../papers.bib
 libraries:
   - "../lib/maths.tex"
   - "../lib/knowledges.kl"
