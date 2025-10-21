@@ -1,0 +1,36 @@
+# Release workflow 
+
+
+name: Release
+on:
+  workflow_dispatch:
+  push:
+    tags: ["*.*.*"]
+  release:
+    types: [published]
+jobs:
+  release_pdfs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Compile Latex Document
+        uses: xu-cheng/texlive-action@v3
+        with:
+          os: debian
+          run: |
+            export DEBIAN_FRONTEND=noninteractive
+            apt-get update -y
+            apt-get install -y make
+            make archive.zip
+      - name: Upload Release Assets
+        if: ${{ github.event_name != 'workflow_dispatch' }}
+        uses: softprops/action-gh-release@v2
+        with:
+          files: "*.zip"
+      - name: Upload Artifacts
+        if: ${{ github.event_name == 'workflow_dispatch' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: release-pdfs
+          path: "*.zip"
