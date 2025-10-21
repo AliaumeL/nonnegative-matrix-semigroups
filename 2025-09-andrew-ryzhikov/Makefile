@@ -14,6 +14,6 @@ report.tex: report.md $(LIB)
 
 clean:
 	latexmk -C 
-	rm -f report.aux report.log report.out report.tex report.pdf
+	rm -f report.aux report.log report.out report.tex report.pdf *.bbl 
 	rm -f *.synctex.gz
 
